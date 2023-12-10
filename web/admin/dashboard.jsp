@@ -50,6 +50,9 @@
                                 <li class="nav-item ">
                                     <a class="nav-link" href="customer-request.jsp">Customer Request</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="interested-person.jsp">Interested Person</a>
+                                </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="customer-feedback.jsp">Customer Feedback</a>
                                 </li>
@@ -89,8 +92,12 @@
 
             </div>
             <div class ="flex-box">
+                 <a class="link-light" href="interested-person.jsp">Interested Person</a>
+            </div>
+            <div class ="flex-box">
                <a class="link-light" href="customer-feedback.jsp">Customer Feedback</a>
             </div>
+            
             <div class ="flex-box">
                  <a class="link-light" href="admin-profile.jsp">Admin Profile</a>
             </div>
