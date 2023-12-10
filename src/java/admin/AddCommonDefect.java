@@ -78,7 +78,7 @@ public class AddCommonDefect extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-         String formAction = request.getParameter("formAction");
+        String formAction = request.getParameter("formAction");
         int deviceId = 0;
         int subDeviceId = 0;
         int deviceOSId = 0;
