@@ -51,7 +51,7 @@ Author     : Sanket Mal
                             <a class="nav-link" href="device-type.jsp">Device Type</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="sub-device-type.jsp">Sub Device Type</a>
+                            <a class="nav-link" href="sub-device-type.jsp">Problem Type</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="device-os-type.jsp">Device OS Type</a>
@@ -61,6 +61,9 @@ Author     : Sanket Mal
                         </li>
                         <li class="nav-item active ">
                             <a class="nav-link" href="customer-request.jsp">Customer Request</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="interested-person.jsp">Interested Person</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="customer-feedback.jsp">Customer Feedback</a>
@@ -95,7 +98,7 @@ Author     : Sanket Mal
                 + "customer_request_problem.request_description,customer_request_problem.request_approx_min_amount,customer_request_problem.request_approx_max_amount,"
                 + "user.user_first_name,user.user_last_name,user.user_phone_number,user.user_email,customer_request_problem.request_defect_id,"
                 + "customer_request_problem.get_service,customer_request_problem.address FROM customer_request_problem INNER JOIN user ON "
-                + "customer_request_problem.request_customer_id = user.user_id ";
+                + "customer_request_problem.request_customer_id = user.user_id where request_confirm = 1";
 
                 stmt = con.createStatement();
                 ResultSet rst = stmt.executeQuery(query);
@@ -165,7 +168,7 @@ Author     : Sanket Mal
                     <th scope="col">Defect Description</th>
                     <th scope="col">Approx Amount</th>
                     <th scope="col">Service Status</th>
-                    <th scope="col">Update Service Status</th>
+                    <th scope="col">Update Status</th>
                 </tr>
                 </thead>
                 <tbody>

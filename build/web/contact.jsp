@@ -10,14 +10,14 @@
     <head>
         <%
     Integer customerId = (Integer) session.getAttribute("customerId");
-    //out.print(adminId);
+    
     if (customerId == null) {
         response.sendRedirect("customer-login-page.jsp");
     }
 %>
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" type="image/x-icon" href="images/logo.png">
-        <title>Customer Dashboard</title>
+        <title>Contact us</title>
         <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/customer-styles.min.css" />
@@ -104,5 +104,108 @@
                   </div>
                 </nav>
               </header>
+              <div class="container-fluid">
+                  <section id="contact" class="contact section-bg">
+            <div class="container" data-aos="fade-up">
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="info-box mb-4">
+                    <i class="bx bx-map"></i>
+                    <h3>Our Address</h3>
+                    <p>MFRJ+VGW, Badu Rd, Madhyamgram, Kolkata, West Bengal 700129</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                  <div class="info-box  mb-4">
+                    <i class="bx bx-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>contact@example.com</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                  <div class="info-box  mb-4">
+                    <i class="bx bx-phone-call"></i>
+                    <h3>Call Us</h3>
+                    <p>+1 5589 55488 55</p>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-lg-6 ">
+
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.9681210400386!2d88.4787375748414!3d22.69223062857606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f8a1e24db25ad7%3A0x5d936ba734cbbd96!2sCOMPUTER%20SERVICE%20ZONE!5e0!3m2!1sen!2sin!4v1696388698428!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+
+                  <div class="col-lg-4" style="margin-left: 10%">
+                    <form action="./ContactMessage" method="POST"id="contact-form">
+                      <div class="row">
+                        <div class="form-group mt-3">
+                          <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" oninput="clearErrorMessage('messageForName')">
+
+                            <p id="messageForName"style="color:red" ></p>
+                        </div>
+                        <div class="form-group mt-3">
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" oninput="clearErrorMessage('messageForEmail')">
+                            <p id="messageForEmail"style="color:red" ></p>
+                        </div>
+                      </div>
+                      <div class="form-group mt-3">
+                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Your phone number" oninput="clearErrorMessage('messageForPhone')">
+                            <p id="messageForPhone"style="color:red" ></p>
+                      </div>
+                      <div class="form-group mt-3">
+                        <textarea class="form-control" name="message" id="message" placeholder="Message" oninput="clearErrorMessage('messageForMessage')"></textarea>
+                            <p id="messageForMessage"style="color:red" ></p>
+                      </div>
+                      <div class="text-center">
+                        <button class="btn btn-primary btn-block mb-4" type="submit" onclick="return formValidation();">Submit</button>                       </div>
+                    </form>
+<!--                    <div class="thank-you-message" style="display: none;">
+                      Your message has been sent. Thank you!
+                    </div>-->
+                    <%
+                        String message = request.getParameter("message");
+                        if (message != null) {
+                     %>
+                     <h3 style="color: blue"><%= message %></h3>
+                     <%
+                        }
+                    %>
+                  </div>
+
+<!--                  <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                    const form = document.getElementById("contact-form");
+                    const thankYouMessage = document.querySelector(".thank-you-message");
+
+                    form.addEventListener("submit", function(event) {
+                      event.preventDefault(); // Prevent the default form submission
+
+                      // Here, you can optionally use AJAX to submit the form data to the server.
+                      // If you don't need to submit to a server, you can skip this part.
+
+                      // Display the "Thank you" message and hide the form
+                      form.style.display = "none";
+                      thankYouMessage.style.display = "block";
+                    });
+                  });
+                  </script>-->
+
+
+              </div>
+
+            </div>
+          </section>
+        </div>
+              
     </body>
+    <script type="text/javascript" src="assets/js/customer/contact.js"></script>
 </html>

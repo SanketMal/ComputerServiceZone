@@ -51,7 +51,7 @@ Author     : Sanket Mal
                             <a class="nav-link" href="device-type.jsp">Device Type</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="sub-device-type.jsp">Sub Device Type</a>
+                            <a class="nav-link" href="sub-device-type.jsp">Problem Type</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="device-os-type.jsp">Device OS Type</a>

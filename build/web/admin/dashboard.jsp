@@ -39,7 +39,7 @@
                                     <a class="nav-link" href="device-type.jsp">Device Type</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="sub-device-type.jsp">Sub Device Type</a>
+                                    <a class="nav-link" href="sub-device-type.jsp">Problem Type</a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="device-os-type.jsp">Device OS Type</a>
@@ -49,6 +49,9 @@
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="customer-request.jsp">Customer Request</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="interested-person.jsp">Interested Person</a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="customer-feedback.jsp">Customer Feedback</a>
@@ -73,7 +76,7 @@
                 <a class="link-light" href="device-type.jsp">Device Type</a>
             </div>
             <div class ="flex-box">
-               <a class="link-light" href="sub-device-type.jsp">Sub Device Type</a>
+               <a class="link-light" href="sub-device-type.jsp">Problem Type</a>
             </div>
             <div class ="flex-box">
                 <a class="link-light" href="device-os-type.jsp">Device OS Type</a>
@@ -89,8 +92,12 @@
 
             </div>
             <div class ="flex-box">
+                 <a class="link-light" href="interested-person.jsp">Interested Person</a>
+            </div>
+            <div class ="flex-box">
                <a class="link-light" href="customer-feedback.jsp">Customer Feedback</a>
             </div>
+            
             <div class ="flex-box">
                  <a class="link-light" href="admin-profile.jsp">Admin Profile</a>
             </div>

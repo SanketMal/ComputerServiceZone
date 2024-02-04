@@ -128,7 +128,8 @@
                     Connection con = null;
                     Statement statement = null;
 
-                    try {
+                    try 
+                    {
                             con = DatabaseConnection.getConnection();
                             System.out.println(customerId);
                             String query = "SELECT * FROM `customer_request_problem` WHERE request_customer_id = ? AND request_confirm = 1;";
@@ -136,24 +137,25 @@
                             pstmt.setInt(1, customerId); 
                             ResultSet rst = pstmt.executeQuery();
 
-                            while(rst.next()) {
-                            String serviceStatus = "" ;
-                            if(rst.getInt("get_service")==0){
-                                serviceStatus = "Due";
+                            while(rst.next()) 
+                            {
+                                String serviceStatus = "" ;
+                                if(rst.getInt("get_service")==0){
+                                    serviceStatus = "Due";
+                                }
+                                else if(rst.getInt("get_service")==1){
+                                        serviceStatus="Got";
+                                }
+                                Map<Object , Object> individualIssue = new HashMap<>();
+                                individualIssue.put("orderId", rst.getInt("request_id"));
+                                individualIssue.put("orderDate", rst.getString("request_date"));
+                                individualIssue.put("orderFixExpectedDate", rst.getString("request_fix_expected_date"));
+                                individualIssue.put("minAmount", rst.getInt("request_approx_min_amount"));
+                                individualIssue.put("maxAmount", rst.getInt("request_approx_max_amount"));
+                                individualIssue.put("serviceStatus", serviceStatus);
+                                customerIssue.add(individualIssue);
                             }
-                            else if(rst.getInt("get_service")==1){
-                                    serviceStatus="Got";
-                            }
-                            Map<Object , Object> individualIssue = new HashMap<>();
-                            individualIssue.put("orderId", rst.getInt("request_id"));
-                            individualIssue.put("orderDate", rst.getString("request_date"));
-                            individualIssue.put("orderFixExpectedDate", rst.getString("request_fix_expected_date"));
-                            individualIssue.put("minAmount", rst.getInt("request_approx_min_amount"));
-                            individualIssue.put("maxAmount", rst.getInt("request_approx_max_amount"));
-                            individualIssue.put("serviceStatus", serviceStatus);
-                            customerIssue.add(individualIssue);
-                    }
-                    Utility.closeDbConnection(con,rst, statement);
+                            Utility.closeDbConnection(con,rst, statement);
 
                     }
                      catch (Exception e) {

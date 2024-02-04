@@ -49,7 +49,7 @@
                                     <a class="nav-link" href="device-type.jsp">Device Type</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="sub-device-type.jsp">Sub Device Type</a>
+                                    <a class="nav-link" href="sub-device-type.jsp">Problem Type</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="device-os-type.jsp">Device OS Type</a>
@@ -59,6 +59,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="customer-request.jsp">Customer Request</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="interested-person.jsp">Interested Person</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="customer-feedback.jsp">Customer Feedback</a>
@@ -121,7 +124,7 @@
                         <div class="form-group mb-3 col-md-4">
                             <div class="row">
                                 <div class="col-md-5">
-                                    <label for="sub-deviceType" class="form-label">Device Mode</label>
+                                    <label for="sub-deviceType" class="form-label">Problem Type</label>
                                 </div>
                                 <div class="col-md-7">
                                     <select class="form-select" aria-label="Default select example" id="subDeviceTypeName" name="subDeviceId" oninput="clearErrorMessage('messageForSubDeviceType')">

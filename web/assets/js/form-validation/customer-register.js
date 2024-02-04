@@ -28,7 +28,7 @@ function formValidation() {
      var messageForPassword=document.getElementById("messageForPassword");
      var messageForCpassword=document.getElementById("messageForCpassword");
      var isValid = true;
-     if (firstName == null || firstName == "") {
+     if (firstName === null || firstName === "") {
 //         var str = new String("First name can't be blank........");
 //
 //         alert(str.fontcolor( "red" ));
@@ -40,7 +40,7 @@ function formValidation() {
      else{
        messageForFirstName.innerHTML ="";   
      }
-     if (lastName == null || lastName== "") {
+     if (lastName === null || lastName=== "") {
           
 //         alert("Last name can't be blank.");
           messageForLastName.innerHTML = "Last name can't be blank.";

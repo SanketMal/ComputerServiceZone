@@ -154,11 +154,11 @@
                             <div class="form-group mb-3 col-md-6">
                                     <div class="row">
                                             <div class="col-md-5">
-                                                    <label for="deviceMode" class="form-label">Device Mode</label>
+                                                    <label for="deviceMode" class="form-label">Problem Type</label>
                                             </div>
                                             <div class="col-md-7">
                                                     <select class="form-select" aria-label="Default select example" id="subDeviceTypeName" name="subDeviceId" oninput="clearErrorMessage('messageForSubDeviceType')">
-                                                            <option selected value="">Select Device Mode</option>
+                                                            <option selected value="">Select Problem in</option>
                                                     <%
 //                                        Connection con1 = null;
 //                                        Statement statement1 = null;

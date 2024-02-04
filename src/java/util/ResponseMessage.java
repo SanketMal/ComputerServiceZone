@@ -17,5 +17,8 @@ public class ResponseMessage {
     public static final String formActionEdit = "edit";
     public static final String formActionDelete = "delete";
     public static final String updateServiceStatus = "Service Status updated .";
+    public static final String messageSentSuccess = "Your message has been sent. Thank you!";
+    public static final String messageSentFail = "Your message has not been sent.";
+    
     
 }

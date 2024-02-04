@@ -56,6 +56,9 @@
                                 <li class="nav-item ">
                                     <a class="nav-link" href="customer-request.jsp">Customer Request</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="interested-person.jsp">Interested Person</a>
+                                </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="customer-feedback.jsp">Customer Feedback</a>
                                 </li>

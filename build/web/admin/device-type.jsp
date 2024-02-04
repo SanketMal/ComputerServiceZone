@@ -45,7 +45,7 @@
                                     <a class="nav-link" href="device-type.jsp">Device Type</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="sub-device-type.jsp">Sub Device Type</a>
+                                    <a class="nav-link" href="sub-device-type.jsp">Problem Type</a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="device-os-type.jsp">Device OS Type</a>
@@ -55,6 +55,9 @@
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="customer-request.jsp">Customer Request</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="interested-person.jsp">Interested Person</a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="customer-feedback.jsp">Customer Feedback</a>

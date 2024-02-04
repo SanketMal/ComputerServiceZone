@@ -143,7 +143,7 @@ public class CustomerIssue extends HttpServlet {
         int approxMinAmount=0;
         int approxMaxAmount=0;
         Connection con = null;
-         Statement stmt = null;
+        Statement stmt = null;
         try{
             con = DatabaseConnection.getConnection();
             String query = "SELECT * FROM  `common_defect` WHERE defect_id ="+ defectId;

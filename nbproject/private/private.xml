@@ -3,16 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/service-booking.jsp</file>
-            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/customer-payment-status.jsp</file>
-            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/customer-dashboard.jsp</file>
-            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/customer-feedback.jsp</file>
-            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/admin/customer-request.jsp</file>
-            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/contact.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/src/java/util/Utility.java</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/src/java/util/ResponseMessage.java</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/admin/device-type.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/admin/sub-device-type.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/src/java/admin/AdminLoginTest.java</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/src/java/admin/AdminLogIn.java</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/src/java/customer/CustomerRegister.java</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/src/java/util/DatabaseConnection.java</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/admin/common-defect.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/assets/js/form-validation/admin-register.js</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/src/java/util/GetDataById.java</file>
             <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/customer-issue.jsp</file>
-            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/customer-profile.jsp</file>
             <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/customer-login-page.jsp</file>
             <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/customer-register.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/admin/device-os-type.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/src/java/admin/AdminRegister.java</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/admin/interested-person.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/assets/js/form-validation/customer-login.js</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/customer-dashboard.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/admin/customer-feedback.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/admin/customer-request.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/admin/dashboard.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/web/admin/logout.jsp</file>
+            <file>file:/C:/Users/Sanket%20Mal/Documents/NetBeansProjects/ComputerServiceZone/src/java/customer/ConfirmServiceBooking.java</file>
         </group>
     </open-files>
 </project-private>

@@ -36,7 +36,7 @@
                                     <a class="nav-link" href="device-type.jsp">Device Type</a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="sub-device-type.jsp">Sub Device Type</a>
+                                    <a class="nav-link" href="sub-device-type.jsp">Problem Type</a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="device-os-type.jsp">Device OS Type</a>
@@ -46,6 +46,9 @@
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="customer-request.jsp">Customer Request</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="interested-person.jsp">Interested Person</a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="customer-feedback.jsp">Customer Feedback</a>
@@ -71,8 +74,8 @@
                 <div class="add-section bg-light mt-2 mb-2">
                     <form action ="../AddSubDeviceType" method="POST">
                         <div class="form-group">
-                            <label for="sub-deviceType">Sub-Device Type Name</label> 
-                            <input class="form-control subDeviceTypeName" id="subDeviceTypeName" placeholder="Enter sub-device type name"
+                            <label for="sub-deviceType">Problem Type</label> 
+                            <input class="form-control subDeviceTypeName" id="subDeviceTypeName" placeholder="Enter Problem type name"
                                    type="text" name="subDeviceType" oninput="clearErrorMessage('messageForSubDeviceType')"> 
                             <p id="messageForSubDeviceType" style="color:red"></p>
                         </div>
@@ -90,8 +93,8 @@
                     <table class=" table mt-2">
                         <thead>
                             <tr>
-                                <th scope="col">Sub-device Id</th><!-- comment -->
-                                <th scope="col">Sub-device Name</th>
+                                <th scope="col">Problem Type Id</th><!-- comment -->
+                                <th scope="col">Problem Type</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>

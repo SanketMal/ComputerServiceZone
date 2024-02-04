@@ -117,45 +117,6 @@
                 </nav>
               </header>
               <!--  Header End -->
-<!--              <div class="container-fluid">
-                  Row 1 
-                <div class="row">
-                    <div>
-                          <h3>Order Details</h3>
-                      </div>
-                  <div class="col-lg-12 d-flex align-items-strech">
-                       
-                      <div class="row">
-                          <div class="form-group mb-3 col-md-12">
-                              <div class="row">
-                                <div class="col-md-3">
-                                  <p class="small text-muted mb-1">Order Id</p>
-                                  <p>10 April 2021</p>
-                                </div>
-                                <div class="col-md-3">
-                                  <p class="small text-muted mb-1">Order Date</p>
-                                  <p>012j1gvs356c</p>
-                                </div>
-                                <div class="col-md-3">
-                                  <p class="small text-muted mb-1">Expected Fix Date</p>
-                                  <p>012j1gvs356c</p>
-                                </div>
-                                <div class="col-md-3">
-                                  <p class="small text-muted mb-1">Approx amount</p>
-                                  <p>012j1gvs356c</p>
-                                </div>
-                                  
-                            </div>
-                          </div>
-                      </div>
-                
-                  </div>
-                  
-                </div>
-               
-                
-                
-              </div>-->
               <%
                     List<Map<Object , Object>> customerIssue = new ArrayList<>();
 //                    Set<Integer> orederId = new HashSet<>();
@@ -167,7 +128,8 @@
                     Connection con = null;
                     Statement statement = null;
 
-                    try {
+                    try 
+                    {
                             con = DatabaseConnection.getConnection();
                             System.out.println(customerId);
                             String query = "SELECT * FROM `customer_request_problem` WHERE request_customer_id = ? AND request_confirm = 1;";
@@ -175,24 +137,25 @@
                             pstmt.setInt(1, customerId); 
                             ResultSet rst = pstmt.executeQuery();
 
-                            while(rst.next()) {
-                            String serviceStatus = "" ;
-                            if(rst.getInt("get_service")==0){
-                                serviceStatus = "Due";
+                            while(rst.next()) 
+                            {
+                                String serviceStatus = "" ;
+                                if(rst.getInt("get_service")==0){
+                                    serviceStatus = "Due";
+                                }
+                                else if(rst.getInt("get_service")==1){
+                                        serviceStatus="Got";
+                                }
+                                Map<Object , Object> individualIssue = new HashMap<>();
+                                individualIssue.put("orderId", rst.getInt("request_id"));
+                                individualIssue.put("orderDate", rst.getString("request_date"));
+                                individualIssue.put("orderFixExpectedDate", rst.getString("request_fix_expected_date"));
+                                individualIssue.put("minAmount", rst.getInt("request_approx_min_amount"));
+                                individualIssue.put("maxAmount", rst.getInt("request_approx_max_amount"));
+                                individualIssue.put("serviceStatus", serviceStatus);
+                                customerIssue.add(individualIssue);
                             }
-                            else if(rst.getInt("get_service")==1){
-                                    serviceStatus="Got";
-                            }
-                            Map<Object , Object> individualIssue = new HashMap<>();
-                            individualIssue.put("orderId", rst.getInt("request_id"));
-                            individualIssue.put("orderDate", rst.getString("request_date"));
-                            individualIssue.put("orderFixExpectedDate", rst.getString("request_fix_expected_date"));
-                            individualIssue.put("minAmount", rst.getInt("request_approx_min_amount"));
-                            individualIssue.put("maxAmount", rst.getInt("request_approx_max_amount"));
-                            individualIssue.put("serviceStatus", serviceStatus);
-                            customerIssue.add(individualIssue);
-                    }
-                    Utility.closeDbConnection(con,rst, statement);
+                            Utility.closeDbConnection(con,rst, statement);
 
                     }
                      catch (Exception e) {
@@ -207,39 +170,7 @@
                             <h3>Order Details</h3>
                         </div>
                     </div>
-<!--                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="form-group mb-3">
-                                <p class="small text-muted mb-1">Order Id</p>
-                                
-                                <p></p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group mb-3">
-                                <p class="small text-muted mb-1">Order Date</p>
-                                <p>10 April 2021</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group mb-3">
-                                <p class="small text-muted mb-1">Expected Fix Date</p>
-                                <p>012j1gvs356c</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group mb-3">
-                                <p class="small text-muted mb-1">Approx Amount</p>
-                                <p>012j1gvs356c</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group mb-3">
-                                <p class="small text-muted mb-1">Service</p>
-                                <p>Due</p>
-                            </div>
-                        </div>
-                    </div>-->
+
                     <div class="table-section bg-light mt-2">
                     <table class="table mt-2">
                         <thead>
@@ -276,14 +207,14 @@
                     </table>
                 </div>
                     
-                     <div class="row">
+<!--                     <div class="row">
                         <div class="col-lg-4 d-flex align-items-stretch">
 
                         </div>
                         <div class="col-lg-8 d-flex align-items-stretch">
 
                         </div>
-                    </div>
+                    </div>-->
                 </div>
 
             </div>

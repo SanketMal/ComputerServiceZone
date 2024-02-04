@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.servlet.ServletException;
@@ -90,7 +91,7 @@ public class ConfirmServiceBooking extends HttpServlet {
 
         if ("Yes".equals(confirmation)) {
             // Retrieve the values from request parameters
-            Statement stmt = (Statement) con.createStatement();
+            
             String updateQuery = "UPDATE `customer_request_problem` SET request_confirm = true " +
                         "WHERE request_customer_id = ? AND request_defect_id = ?";           
             preparedStatement = con.prepareStatement(updateQuery);
@@ -102,21 +103,58 @@ public class ConfirmServiceBooking extends HttpServlet {
             if (result > 0) {
                 System.out.println("Redirecting...");
                 response.sendRedirect(request.getContextPath() + "/booking-confirm-message.jsp");
+                Utility.closeDbConnection(con, preparedStatement);
             }
         }
         else if ("No".equals(confirmation)) {
-   
-                String updateQuery = "UPDATE `customer_request_problem` SET request_confirm = false " +
-                                    "WHERE request_customer_id = ? AND request_defect_id = ?";
-                preparedStatement = con.prepareStatement(updateQuery);
-                preparedStatement.setInt(1, userId);
-                preparedStatement.setInt(2, defectId);
 
-                int result = preparedStatement.executeUpdate();
-                if (result > 0) {
+                String customerDataQuery = "SELECT user.user_first_name, user.user_last_name, user.user_email, user.user_phone_number, "
+        + "customer_request_problem.request_description FROM customer_request_problem "
+        + "INNER JOIN user ON customer_request_problem.request_customer_id = user.user_id WHERE user.user_id = ?";
+
+            PreparedStatement customerDataStatement = con.prepareStatement(customerDataQuery);
+            customerDataStatement.setInt(1, userId);
+            ResultSet customerDataResult = customerDataStatement.executeQuery();
+
+            String firstName = null;
+            String lastName = null;
+            String userEmail = null;
+            String userPhone = null;
+            String message = null;
+
+            // Check if there's a result (customer with the given ID found)
+            if (customerDataResult.next()) {
+                firstName = customerDataResult.getString("user_first_name");
+                lastName = customerDataResult.getString("user_last_name");
+                userEmail = customerDataResult.getString("user_email");
+                userPhone = customerDataResult.getString("user_phone_number");
+                message = customerDataResult.getString("request_description");
+                System.out.println("User ID: " + userId);
+                System.out.println("Message: " + message);
+                if (message == null) {
+                    // Handle the case where message is null
+                    message = ""; // Set a default value or handle it as needed
+                }
+                System.out.println("message :" +message);
+
+            }
+
+            // Now, you have the customer's data, you can insert it into the interested_person table
+            String insertQuery = "INSERT INTO interested_person (name, email, phone , message , action) VALUES (?, ?, ? , ? ,?)";
+            preparedStatement = con.prepareStatement(insertQuery);
+            preparedStatement.setString(1, firstName + " " + lastName); // Combine first name and last name
+            preparedStatement.setString(2, userEmail);
+            preparedStatement.setString(3, userPhone);
+             preparedStatement.setString(4, message);
+             preparedStatement.setInt(5, 0);
+                    
+            int insertResult = preparedStatement.executeUpdate();
+             if (insertResult > 0) {
                     System.out.println("Redirecting...");
                     response.sendRedirect(request.getContextPath() + "/customer-dashboard.jsp");
                 }
+             
+             Utility.closeDbConnection(con, preparedStatement);
         }
 
     } catch (SQLException e) {
